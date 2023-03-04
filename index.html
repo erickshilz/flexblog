@@ -168,5 +168,26 @@
   <footer class="footer">
     <p>FlexBlog © Todos os direitos reservados</p>
   </footer>
+
+  <script>
+  const links = document.querySelectorAll('.menu nav a');
+  
+  function initScroll(event) {
+    event.preventDefault();
+
+    const href = event.currentTarget.getAttribute('href');
+
+    const section = document.querySelector(href);
+
+    section.scrollIntoView({
+      behavior: 'smooth',
+      block: 'start',
+      });
+    }
+      
+    links.forEach((link) => {
+      link.addEventListener('click', initScroll);
+    });
+    </script>
 </body>
 </html>
